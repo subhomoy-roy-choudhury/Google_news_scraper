@@ -23,13 +23,13 @@ def home(requests):
             if len(scrape1) > 1 :
                 print(scrape1)
 
-        scraper_details = Google_news.objects.all()
-        print(scraper_details)
-
     except Exception as e:
         print(e)
         pass
 
+    scraper_details = Google_news.objects.all()
+    print(scraper_details)
+    
     context={
         'scraper_details' : scraper_details,
         }
