@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Google News Scraper</title>
+    <style>
+        table {
+            border-spacing: 5px;
+            }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            }
+    </style>
+</head>
+<h1 style="text-align: center;"> Google News Scraper :- </h1>
+<table style="width:100%;border: 1px solid black;">
+<tr>
+  <th>Details</th>
+  <th>Description</th>
+  <th>Date And Time</th>
+  <th>Image</th>
+</tr>
+{% for item in scraper_details %}
+<tr>
+  <th> {{ item.details }}</th>
+  <th> {{ item.description }}</th>
+  <th> {{ item.date_time }}</th>
+  <th> <img src="{{item.image_url}}" width="200" height="121" /></th>
+</tr> 
+{% endfor %}
+</html>
