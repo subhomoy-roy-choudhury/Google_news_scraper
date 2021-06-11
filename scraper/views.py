@@ -11,22 +11,6 @@ from .models import *
 
 def home(requests):
     template_name = 'scraper/google_news_scraper.html'
-    try :
-        scraper1 = scraper()
-        # print(scraper1)
-        with open('scraper/google_news_scraper.json','w') as file :
-            json.dump(scraper1,file,ensure_ascii=False, indent=1)
-        
-        for i in scraper1:
-            scrape = Google_news.objects.get_or_create(description=i['description'],details=i['details'],date_time=i['date_time'],image_url=i['image_url'])
-            scrape1 = Google_news.objects.filter(description=i['description'],details=i['details'],image_url=i['image_url'])
-            if len(scrape1) > 1 :
-                print(scrape1)
-
-    except Exception as e:
-        print(e)
-        pass
-
     scraper_details = Google_news.objects.all()
     print(scraper_details)
     
